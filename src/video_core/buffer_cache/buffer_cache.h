@@ -90,6 +90,10 @@ public:
     /// Writes a value to GPU buffer.
     void InlineData(VAddr address, const void* value, u32 num_bytes, bool is_gds);
 
+    void CopyBuffer(VAddr dst, VAddr src, u32 num_bytes, bool dst_gds, bool src_gds);
+
+    [[nodiscard]] std::pair<Buffer*, u32> ObtainHostUBO(std::span<const u32> data);
+
     /// Obtains a buffer for the specified region.
     [[nodiscard]] std::pair<Buffer*, u32> ObtainBuffer(VAddr gpu_addr, u32 size, bool is_written,
                                                        bool is_texel_buffer = false,
