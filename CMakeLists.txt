@@ -298,6 +298,7 @@ set(KERNEL_LIB src/core/libraries/kernel/sync/mutex.cpp
 
 set(NETWORK_LIBS src/core/libraries/network/http.cpp
                  src/core/libraries/network/http.h
+                 src/core/libraries/network/http_error.h
                  src/core/libraries/network/http2.cpp
                  src/core/libraries/network/http2.h
                  src/core/libraries/network/net.cpp
@@ -583,6 +584,7 @@ set(COMMON src/common/logging/backend.cpp
            src/common/spin_lock.h
            src/common/stb.cpp
            src/common/stb.h
+           src/common/string_literal.h
            src/common/string_util.cpp
            src/common/string_util.h
            src/common/thread.cpp
@@ -642,8 +644,6 @@ set(CORE src/core/aerolib/stubs.cpp
          src/core/file_format/playgo_chunk.h
          src/core/file_format/trp.cpp
          src/core/file_format/trp.h
-         src/core/file_format/splash.h
-         src/core/file_format/splash.cpp
          src/core/file_sys/fs.cpp
          src/core/file_sys/fs.h
          src/core/loader.cpp
@@ -844,6 +844,10 @@ set(VIDEO_CORE src/video_core/amdgpu/liverpool.cpp
                src/video_core/renderer_vulkan/vk_shader_util.h
                src/video_core/renderer_vulkan/vk_swapchain.cpp
                src/video_core/renderer_vulkan/vk_swapchain.h
+               src/video_core/renderer_vulkan/host_passes/fsr_pass.cpp
+               src/video_core/renderer_vulkan/host_passes/fsr_pass.h
+               src/video_core/renderer_vulkan/host_passes/pp_pass.cpp
+               src/video_core/renderer_vulkan/host_passes/pp_pass.h
                src/video_core/texture_cache/image.cpp
                src/video_core/texture_cache/image.h
                src/video_core/texture_cache/image_info.cpp
@@ -916,6 +920,9 @@ set(QT_GUI src/qt_gui/about_dialog.cpp
 	   src/qt_gui/control_settings.cpp	   
            src/qt_gui/control_settings.h
            src/qt_gui/control_settings.ui
+           src/qt_gui/kbm_gui.cpp	   
+           src/qt_gui/kbm_gui.h
+           src/qt_gui/kbm_gui.ui
            src/qt_gui/main_window_ui.h
            src/qt_gui/main_window.cpp
            src/qt_gui/main_window.h
